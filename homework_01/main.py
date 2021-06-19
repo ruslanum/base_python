@@ -4,13 +4,13 @@
 """
 
 
-def power_numbers(*args):
-    list_of_square = []
-    for num in args:
-        list_of_square.append(num ** 2)
-    return list_of_square
-
-power_numbers(1, 2, 3)
+# def power_numbers(*args):
+#     list_of_square = []
+#     for num in args:
+#         list_of_square.append(num ** 2)
+#     return list_of_square
+#
+# power_numbers(1, 2, 3)
 #
 # #     """
 # #     функция, которая принимает N целых чисел,
@@ -29,23 +29,28 @@ PRIME = "prime"
 def is_prime(list_of_numbers):
         list_of_primes =[]
         for i in set(list_of_numbers):
+            print("i==",i)
             d = 2
             while i % d != 0:
-                d = + 1
-                list_of_primes.append(i)
+                print('d=',d)
+                print("end",i)
+                d+=1
+                if i == d:
+                    list_of_primes.append(i)
         return list(list_of_primes)
 
-def filter_numbers(list_of_numb, choice):
-        if choice == ODD:
+def filter_numbers(list_of_numb, choi):
+        if choi == ODD:
                 odds = (num for num in list_of_numb if num % 2 == 0)
                 return list(odds)
-        if choice == EVEN:
+        if choi == EVEN:
                 evens = (num for num in list_of_numb if num % 2 != 0)
                 return list(evens)
-        if choice == PRIME:
+        if choi == PRIME:
                 prime = is_prime(list_of_numb)
                 return list(prime)
 
+print(filter_numbers([7, 8, 11, 12, 27, 11, 99], "prime"))
 
 
 
