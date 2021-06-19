@@ -27,11 +27,15 @@ PRIME = "prime"
 def is_prime(list_of_numbers):
         list_of_primes =[]
         for i in set(list_of_numbers):
-            d = 2
-            while i % d != 0:
-                d+=1
-                if i == d:
-                    list_of_primes.append(i)
+            # print('i=',i)
+            for num in range(2,i+1):
+                # print('num=',num)
+                if i % num == 0 and i > num:
+                    # print('num2=',num)
+                    break
+            else:
+                list_of_primes.append(i)
+                # print(list_of_primes)
         return list(list_of_primes)
 
 def filter_numbers(list_of_numb, choi):
@@ -45,6 +49,7 @@ def filter_numbers(list_of_numb, choi):
                 prime = is_prime(list_of_numb)
                 return list(prime)
 
+# print(filter_numbers([1, 4, 17, 99, 333, 23, 11, 8, 7], PRIME))
 #     """
 #     функция, которая на вход принимает список из целых чисел,
 #     и возвращает только чётные/нечётные/простые числа
