@@ -4,11 +4,13 @@
 """
 
 
-def power_numbers(list_numb):
+def power_numbers(*args):
     list_of_square = []
-    for num in list_numb:
+    for num in args:
         list_of_square.append(num ** 2)
     return list_of_square
+
+power_numbers(1, 2, 3)
 #
 # #     """
 # #     функция, которая принимает N целых чисел,
