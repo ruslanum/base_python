@@ -35,7 +35,7 @@ def is_prime(list_of_numbers):
                     break
             else:
                 list_of_primes.append(i)
-                print(list_of_primes)
+                # print(list_of_primes)
         return list_of_primes
 
 def filter_numbers(list_of_numb, choi):
