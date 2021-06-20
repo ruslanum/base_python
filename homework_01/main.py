@@ -39,17 +39,17 @@ def is_prime(list_of_numbers):
     return list_of_primes
 
 def filter_numbers(list_of_numb, choi):
-        if choi == ODD:
-                odds = (num for num in list_of_numb if num % 2 != 0)
-                return list(odds)
-        if choi == EVEN:
-                evens = (num for num in list_of_numb if num % 2 == 0)
-                return list(evens)
-        if choi == PRIME:
-                prime = is_prime(list_of_numb)
-                return list(prime)
+    if choi == ODD:
+        odds = (num for num in list_of_numb if num % 2 != 0)
+        return list(odds)
+    if choi == EVEN:
+        evens = (num for num in list_of_numb if num % 2 == 0)
+        return list(evens)
+    if choi == PRIME:
+        prime = is_prime(list_of_numb)
+        return list(prime)
 
-print(filter_numbers([9457, 1, 2, 4, 6, 7, 11, 8, 999], PRIME))
+# print(filter_numbers([9457, 1, 2, 4, 6, 7, 11, 8, 999], EVEN))
 #     """
 #     функция, которая на вход принимает список из целых чисел,
 #     и возвращает только чётные/нечётные/простые числа
