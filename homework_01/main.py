@@ -25,18 +25,18 @@ EVEN = "even"
 PRIME = "prime"
 
 def is_prime(list_of_numbers):
-        list_of_primes =[]
-        for i in list_of_numbers:
-            # print('i=',i)
-            for num in range(2,i+1):
-                # print('num=',num)
-                if i % num == 0 and i > num:
-                    # print('num2=',num)
-                    break
-            else:
-                list_of_primes.append(i)
-                # print(list_of_primes)
-        return list_of_primes
+    list_of_primes =[]
+    for i in list_of_numbers:
+        # print('i=',i)
+        for num in range(2,i+1):
+            # print('num=',num)
+            if i % num == 0 and i > num:
+            # print('num2=',num)
+                break
+        else:
+            list_of_primes.append(i)
+            # print(list_of_primes)
+    return list_of_primes
 
 def filter_numbers(list_of_numb, choi):
         if choi == ODD:
@@ -49,7 +49,7 @@ def filter_numbers(list_of_numb, choi):
                 prime = is_prime(list_of_numb)
                 return list(prime)
 
-print(filter_numbers([9457, 1, 2, 4, 6], ODD))
+print(filter_numbers([9457, 1, 2, 4, 6, 7, 11, 8, 999], PRIME))
 #     """
 #     функция, которая на вход принимает список из целых чисел,
 #     и возвращает только чётные/нечётные/простые числа
