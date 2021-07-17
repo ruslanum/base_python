@@ -49,7 +49,7 @@ def filter_numbers(list_of_numb, choi):
         prime = is_prime(list_of_numb)
         return list(prime)
 
-# print(filter_numbers([9457, 1, 2, 4, 6, 7, 11, 8, 999], EVEN))
+print(filter_numbers([9457, 1, 2, 4, 6, 7, 11, 8, 999, 999], ODD))
 #     """
 #     функция, которая на вход принимает список из целых чисел,
 #     и возвращает только чётные/нечётные/простые числа
