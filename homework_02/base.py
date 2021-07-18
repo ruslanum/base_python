@@ -14,7 +14,7 @@ class Vehicle:
 
     def start(self):
         if Vehicle.started is not True:
-            if self.fuel > 0:
+            if Vehicle.fuel > 0:
                 Vehicle.started = True
             else:
                 raise LowFuelError('Danger! Low Fuel!')
