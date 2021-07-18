@@ -13,10 +13,11 @@ class Vehicle:
         self.fuel_consumption = fuel_consumption
 
     def start(self):
-        if Vehicle.fuel > 0:
-            Vehicle.started = True
-        else:
-            raise LowFuelError('Danger! Low Fuel!')
+        if Vehicle.started is not True:
+            if self.fuel > 0:
+                Vehicle.started = True
+            else:
+                raise LowFuelError('Danger! Low Fuel!')
 
     def move(self, weight):
         self.weight = weight
@@ -32,5 +33,5 @@ class Vehicle:
 
 
 if __name__ == '__main__':
-    res = Vehicle(1, 8, 1)
+    res = Vehicle(1, 0, 1)
     print(res)
