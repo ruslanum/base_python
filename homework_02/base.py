@@ -3,7 +3,7 @@ from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 class Vehicle:
     weight = 0
-    started = 0
+    started = False
     fuel = 0
     fuel_consumption = 0
 
@@ -14,7 +14,7 @@ class Vehicle:
 
     def start(self):
         if self.fuel > 0:
-            Vehicle.started = 1
+            Vehicle.started = True
         else:
             raise LowFuelError('Danger! Low Fuel!')
 
@@ -32,5 +32,5 @@ class Vehicle:
 
 
 if __name__ == '__main__':
-    res = Vehicle(1, 0, 3)
+    res = Vehicle(1, 4, 3)
     print(res)
