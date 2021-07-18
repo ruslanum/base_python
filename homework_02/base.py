@@ -13,6 +13,7 @@ class Vehicle:
         self.fuel_consumption = fuel_consumption
 
     def start(self, fuel):
+        self.fuel = fuel
         if Vehicle.started is not True:
             if fuel > 0:
                 Vehicle.started = True
