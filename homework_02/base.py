@@ -26,6 +26,8 @@ class Vehicle:
                 return Vehicle.fuel
             else:
                 raise NotEnoughFuel('No fuel')
+        else:
+            raise LowFuelError('Danger! Low Fuel!')
 
     def __str__(self):
         return(f'(start={self.start()}, weight = {self.weight}, fuel = {self.fuel}, started = {self.started}, move = {self.move(self.weight)},vehicle.fuel = {Vehicle.fuel}')
