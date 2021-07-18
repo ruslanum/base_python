@@ -13,25 +13,27 @@ class Vehicle:
         self.fuel_consumption = fuel_consumption
 
     def start(self):
-        if Vehicle.started is not True:
-            if self.fuel > 0:
-                Vehicle.started = True
-            else:
-                raise LowFuelError('Danger! Low Fuel!')
+        if self.fuel > 0:
+            Vehicle.started = True
+        else:
+            raise LowFuelError('Danger! Low Fuel!')
 
-    def move(self, weight):
+    def move(self):
         if Vehicle.started is True:
-            if weight * self.fuel_consumption <= self.fuel:
+            if self.weight * self.fuel_consumption <= self.fuel:
                 Vehicle.fuel = self.fuel - self.weight * self.fuel_consumption
                 return Vehicle.fuel
             else:
                 raise NotEnoughFuel('No fuel')
 
-    # def __str__(self):
-    #     return (
-    #         f'(start={self.start()}, weight = {self.weight}, fuel = {self.fuel}, started = {self.started}, move = {self.move(self.weight)},vehicle.fuel = {Vehicle.fuel}')
+    def __str__(self):
+        return (
+            f'weight = {self.weight},'
+            f'fuel = {self.fuel},'
+            f'started = {Vehicle.started},'
+            f'move = {self.move(self.weight)},'
+            f'vehicle.fuel = {Vehicle.fuel}')
 
-
-# if __name__ == '__main__':
-#     Vehicle.fuel = 3
-#     print(Vehicle(2))
+if __name__ == '__main__':
+    res = Vehicle(1, 2, 3)
+    print(res)
