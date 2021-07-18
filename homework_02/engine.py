@@ -4,6 +4,6 @@ create dataclass `Engine`
 from dataclasses import dataclass
 
 class Engine:
-    volume : int
-    pistons : int
+    volume = 0
+    pistons = 0
 
