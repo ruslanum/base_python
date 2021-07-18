@@ -17,11 +17,12 @@ class Vehicle():
                 raise LowFuelError('Danger! Low Fuel!')
 
     def __str__(self):
-        return(f'(weight = {self.weight}, fuel = {self.fuel}, started = {self.started},start = {self.start()}, move = {self.move()}')
+        return(f'(weight = {self.weight}, fuel = {self.fuel}, started = {self.started},start = {self.start()}, move = {self.move(self.weight)}')
 
-    def move(self):
+    def move(self, weight):
+        self.weight = weight
         if self.started == 1:
-            if self.weight * self.fuel_consumption <= self.fuel:
+            if weight * self.fuel_consumption <= self.fuel:
                 new_fuel = self.fuel - self.weight * self.fuel_consumption
                 return new_fuel
             else:
@@ -29,5 +30,5 @@ class Vehicle():
 
 
 if __name__ == '__main__':
-    res = Vehicle(1, 2, 3)
+    res = Vehicle(2, 8, 3)
     print(res)
