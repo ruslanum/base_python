@@ -9,8 +9,8 @@ class Plane(Vehicle):
     cargo = 0
     max_cargo = 21
 
-    def __init__(self, max_cargo, new_cargo):
-        super(Vehicle, self).__init__()
+    def __init__(self, weight, fuel, fuel_consumption, max_cargo, new_cargo=0):
+        super(Plane, self).__init__(weight, fuel, fuel_consumption)
         self.max_cargo = max_cargo
         self.new_cargo = new_cargo
 
@@ -29,7 +29,7 @@ class Plane(Vehicle):
         return self.load_cargo()
 
 
-if __name__ ==  '__main__':
-    res = Plane(21, 20)
-    print(res)
-    print(Plane.cargo)
+# if __name__ ==  '__main__':
+#     res = Plane(21, 20, 23, 32)
+#     print(res)
+#     print(Plane.cargo)
