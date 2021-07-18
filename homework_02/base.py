@@ -14,7 +14,7 @@ class Vehicle():
                 self.started = 1
                 return self.started
             else:
-                raise LowFuelError('Danger! No start!')
+                raise LowFuelError('Danger! Low Fuel!')
 
     def __str__(self):
         return(f'(weight = {self.weight}, fuel = {self.fuel}, started = {self.started},start = {self.start()}, move = {self.move()}')
@@ -29,5 +29,5 @@ class Vehicle():
 
 
 if __name__ == '__main__':
-    res = Vehicle(1, -1, 3)
+    res = Vehicle(1, 2, 3)
     print(res)

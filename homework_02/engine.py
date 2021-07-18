@@ -1,9 +1,9 @@
 """
 create dataclass `Engine`
 """
-import dataclasses from pydentic
+from dataclasses import dataclass
 
+class Engine:
+    volume : int
+    pistons : int
 
-@dataclasses
-class Engine():
-    pass
