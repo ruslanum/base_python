@@ -6,13 +6,13 @@ from homework_02.engine import Engine
 
 
 class Car(Vehicle):
-    engine = 0
+    engine = []
 
     def __init__(self, weight, fuel, fuel_consumption):
         super(Car, self).__init__(weight, fuel, fuel_consumption)
 
     def set_engine(self):
-        Car.engine = Engine()
+        self.engine = Engine()
         return self.engine
 
     def __str__(self):
