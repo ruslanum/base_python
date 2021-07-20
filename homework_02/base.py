@@ -2,20 +2,19 @@ from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 
 class Vehicle:
-    weight = 1
+    weight = 0
     started = False
-    fuel = 1
-    fuel_consumption = 1
+    fuel = 0
+    fuel_consumption = 0
 
     def __init__(self, weight, fuel, fuel_consumption):
         self.weight = weight
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
 
-    @classmethod
-    def start(cls):
-        if Vehicle.started is not True:
-            if Vehicle.fuel > 0:
+    def start(self):
+        if self.started is not True:
+            if self.fuel > 0:
                 Vehicle.started = True
             else:
                 raise LowFuelError('Danger! Low Fuel!')
@@ -24,8 +23,8 @@ class Vehicle:
         self.weight = weight
         if Vehicle.started is True:
             if self.weight * self.fuel_consumption <= self.fuel:
-                Vehicle.fuel = self.fuel - self.weight * self.fuel_consumption
-                return Vehicle.fuel
+                self.fuel = self.fuel - self.weight * self.fuel_consumption
+                return self.fuel
             else:
                 raise NotEnoughFuel('No fuel')
 
@@ -41,6 +40,5 @@ class Vehicle:
 
 if __name__ == '__main__':
     Vehicle.started = False
-    Vehicle.fuel = 0
-    res = Vehicle(1, 2, 3)
+    res = Vehicle(1, 3, 3)
     print(res)
