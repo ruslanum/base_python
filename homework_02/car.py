@@ -11,12 +11,13 @@ class Car(Vehicle):
     def __init__(self, weight, fuel, fuel_consumption):
         super(Car, self).__init__(weight, fuel, fuel_consumption)
 
-    def set_engine(self):
-        self.engine = Engine
+    def set_engine(self, engine):
+        Car.engine = engine
         return self.engine
 
-    def __str__(self):
-        return (f's.engine = {self.set_engine()},Car.engine = {Car.engine},')
+    # def __str__(self):
+    #     return (f's.engine = {self.set_engine()},Car.engine = {Car.engine},')
+
 
 # if __name__ == '__main__':
 #     res = Car(1, 4, 3)
