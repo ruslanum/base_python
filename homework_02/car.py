@@ -12,7 +12,7 @@ class Car(Vehicle):
         super(Car, self).__init__(weight, fuel, fuel_consumption)
 
     def set_engine(self):
-        self.engine = Engine()
+        self.engine = Engine
         return self.engine
 
     def __str__(self):
