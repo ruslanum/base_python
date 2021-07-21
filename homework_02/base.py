@@ -21,12 +21,11 @@ class Vehicle:
 
     def move(self, weight):
         self.weight = weight
-        if Vehicle.started is True:
-            if self.weight * self.fuel_consumption <= self.fuel != 0:
-                self.fuel = self.fuel - self.weight * self.fuel_consumption
-                return self.fuel
-            else:
-                raise NotEnoughFuel('No fuel')
+        if self.weight * self.fuel_consumption <= self.fuel != 0:
+            Vehicle.fuel = self.fuel - self.weight * self.fuel_consumption
+            return Vehicle.fuel
+        else:
+            raise NotEnoughFuel('No fuel')
 
     def __str__(self):
         return (
