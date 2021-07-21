@@ -21,7 +21,7 @@ class Vehicle:
 
     def move(self, weight):
         self.weight = weight
-        if self.started is True:
+        if Vehicle.started is True:
             if self.weight * self.fuel_consumption <= self.fuel != 0:
                 self.fuel = self.fuel - self.weight * self.fuel_consumption
                 return self.fuel
