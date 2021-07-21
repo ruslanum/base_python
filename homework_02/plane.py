@@ -14,19 +14,17 @@ class Plane(Vehicle):
         self.max_cargo = max_cargo
         self.new_cargo = new_cargo
 
-    def __str__(self):
-        return (f'(class_cargo = {Plane.cargo},class_max_cargo = {Plane.max_cargo},new_plane.cargo = {self.load_cargo()},rem_all_carh = {self.remove_all_cargo()}')
+    # def __str__(self):
+    #     return (f'(class_cargo = {Plane.cargo},class_max_cargo = {Plane.max_cargo},new_plane.cargo = {self.load_cargo()},rem_all_carh = {self.remove_all_cargo()}')
 
-    def load_cargo(self):
-        if Plane.cargo + self.new_cargo < self.max_cargo:
-            Plane.cargo = Plane.cargo + self.new_cargo
-            return Plane.cargo
+    def load_cargo(self, num):
+        if num + self.cargo < self.max_cargo:
+            self.cargo = self.cargo + num
         else:
             raise CargoOverload('Cargo Over!')
 
-    def remove_all_cargo(self):
-        Plane.cargo = 0
-        return self.load_cargo()
+    # def remove_all_cargo(self):
+    #     Plane.cargo = 0
 
 
 # if __name__ ==  '__main__':
