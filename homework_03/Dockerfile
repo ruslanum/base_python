@@ -1,3 +1,4 @@
+#запуск контейнера: run docker run -p 8080:8000 webwork3
 FROM python:3.9-buster
 
 WORKDIR /app
